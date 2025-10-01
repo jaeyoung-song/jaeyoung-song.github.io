@@ -1,5 +1,5 @@
 # personal-homepage
-
+This is root
 This project is a personal homepage that showcases my work, interests, and contact information. It is built using HTML, CSS, and JavaScript.
 
 ## Project Structure
