@@ -1,0 +1,20 @@
+{
+  "name": "personal-homepage",
+  "version": "1.0.0",
+  "description": "A personal homepage showcasing information about me, my projects, and my interests.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "open src/index.html",
+    "build": "echo 'Build process can be defined here'",
+    "deploy": "echo 'Deployment process can be defined here'"
+  },
+  "keywords": [
+    "personal",
+    "homepage",
+    "portfolio"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
