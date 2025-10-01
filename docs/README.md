@@ -1,5 +1,5 @@
 # Personal Homepage
-
+This is docs
 This project is a personal homepage that showcases information about me, my projects, and my interests. It is built using HTML, CSS, and JavaScript, and is designed to be simple and responsive.
 
 ## Project Structure
