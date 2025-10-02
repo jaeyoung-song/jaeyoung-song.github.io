@@ -129,19 +129,29 @@
     section.block{margin-top:22px}
     .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:12px}
 
-    .project{
+    .research{
       padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
       border:1px solid var(--glass-2);transition:transform .22s ease, box-shadow .22s ease;
     }
-    .project:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+    .research:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
 
-    .project h4{margin:0 0 6px 0}
+    .research h4{margin:0 0 6px 0}
     .tags{display:flex;gap:8px;flex-wrap:wrap}
     .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:var(--glass);color:var(--muted)}
 
     /* publications */
     .pub{display:flex;justify-content:space-between;gap:12px;padding:12px;border-radius:10px;background:var(--glass);align-items:center}
     .pub small{color:var(--muted)}
+
+    /* members */
+    .members{
+        padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+        border:1px solid var(--glass-2);transition:transform .22s ease, box-shadow .22s ease;
+    }
+    .members:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+    .members h4{margin:0 0 3px 0}
+    .members p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
 
     /* contact */
     .contact-form input,.contact-form textarea{
@@ -169,6 +179,7 @@
     a.inline-link{color:inherit;text-decoration:underline}
     .theme-toggle{background:transparent;border:0;color:var(--muted);cursor:pointer;padding:8px;border-radius:8px}
   </style>
+
 </head>
 <body>
   <div class="wrap">
@@ -182,8 +193,9 @@
       </div>
 
       <nav class="fade-up delay-2" aria-label="Primary navigation">
-        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#members">Members</a>
         <a href="#contact">Contact</a>
         <button class="btn" id="downloadCv">Download CV</button>
         <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌓</button>
@@ -272,8 +284,8 @@
     </section> -->
 
     <section class="block fade-up delay-4" id="research">
-      <h3 style="margin:0 0 6px 0">Projects</h3>
-      <div class="cards">
+      <h3 style="margin:0 0 6px 0">Research</h3>
+      <div class="research">
         <article class="research">
           <h4>Heterogeneous Federated Learning</h4>
           <p style="margin:6px 0 10px 0;color:var(--muted)">When heterogeneous devices collaborate in a federated learning setting, challenges arise in terms of data distribution, model convergence, and communication efficiency. We address these challenges by proposing novel algorithms and frameworks that enhance the performance and robustness of federated learning systems in heterogeneous environments.</p>
@@ -473,7 +485,7 @@
     // Download CV button
     document.getElementById('downloadCv').addEventListener('click', () => {
       // replace with /CV.pdf if hosted
-      window.location.href = '/CV.pdf';
+      window.location.href = '/src/CV_Jaeyoung.pdf';
     });
   </script>
 </body>
