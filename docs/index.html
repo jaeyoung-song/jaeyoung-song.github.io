@@ -441,7 +441,7 @@
 
 
     <!-- Contact -->
-    <section class="block fade-up delay-1" id="contact">
+    <!-- <section class="block fade-up delay-1" id="contact">
       <h3 style="margin:0 0 6px 0">Contact</h3>
 
       <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px;">
@@ -465,47 +465,48 @@
           </div>
         </form>
 
-        <!-- <aside style="padding:14px;border-radius:12px;background:var(--glass);border:1px solid var(--glass-2)">
+        <aside style="padding:14px;border-radius:12px;background:var(--glass);border:1px solid var(--glass-2)">
           <strong>Contact</strong>
           <ul style="margin-top:8px;color:var(--muted);padding-left:18px">
             <li>Office: Room #9501, The 9-th Engineering Building, Pusan National University</li>
             <li>Email: <a class="inline-link" href="mailto:jsong@pusan.ac.kr">jsong@pusan.ac.kr</a></li>
             <li>GitHub: <a class="inline-link" href="https://github.com/jaeyoung-song" target="_blank" rel="noreferrer">jaeyoung-song</a></li>
           </ul>          
-        </aside> -->
-        <!-- Back to Top Button -->
-            <button id="backToTopBtn" 
-                    class="hidden fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-md shadow-lg hover:bg-blue-700 transition"
-                    style="font-size:16px; font-weight:600;">
-            ↑ Top
-            </button>
-
-            <script>
-            // Get the button
-            const backToTopBtn = document.getElementById("backToTopBtn");
-
-            // Show button when user scrolls down 200px
-            window.addEventListener("scroll", () => {
-                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                    backToTopBtn.classList.remove("hidden");
-                } else {
-                    backToTopBtn.classList.add("hidden");
-                }
-            });
-
-            // Scroll to top smoothly when clicked
-            backToTopBtn.addEventListener("click", () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
-            </script>    
+        </aside>
+         
       </div>
-      
+    </section> -->
 
-    </section>
+    <div location="relative">
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" 
+            class="hidden fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-md shadow-lg hover:bg-blue-700 transition"
+            style="font-size:16px; font-weight:600;">
+    ↑ Top
+    </button>
+        <script>
+        // Get the button
+        const backToTopBtn = document.getElementById("backToTopBtn");
 
+        // Show button when user scrolls down 200px
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopBtn.classList.remove("hidden");
+            } else {
+                backToTopBtn.classList.add("hidden");
+            }
+        });
+
+        // Scroll to top smoothly when clicked
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+        </script>  
+    </div>
+     
     <footer>
       © <span id="year"></span> Jaeyoung Song</a>
     </footer>
