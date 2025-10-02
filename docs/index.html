@@ -466,15 +466,19 @@
 
   <!-- Back to Top Button -->
     <button id="backToTopBtn" 
-            class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
-    ↑
+            class="hidden fixed bottom-6 right-6 w-12 h-12 flex items-center justify-center 
+                bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition">
+    <!-- Arrow Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" 
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M5 15l7-7 7 7" />
+    </svg>
     </button>
 
     <script>
-        // Get the button
         const backToTopBtn = document.getElementById("backToTopBtn");
 
-        // Show button when user scrolls down 200px
         window.addEventListener("scroll", () => {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
             backToTopBtn.classList.remove("hidden");
@@ -483,14 +487,11 @@
             }
         });
 
-        // Scroll to top smoothly when clicked
         backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-            });
-        });</script>
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     </script>
+
 
     <script>
         // Initialize year
