@@ -197,8 +197,8 @@
         <p class="lead">Currently, I am interested in federated learning, especially overcoming heterogeneity and making it suitable for on-device AI.</p>
 
         <div class="links">
-          <a class="btn" href="https://github.com/your-github" target="_blank" rel="noreferrer">View GitHub</a>
-          <a class="btn secondary" href="https://scholar.google.com" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="btn" href="https://github.com/jaeyoung-song" target="_blank" rel="noreferrer">View GitHub</a>
+          <a class="btn secondary" href="https://scholar.google.com/citations?user=KSOJKVgAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">Google Scholar</a>
           <a class="btn secondary" href="./src/CV_Jaeyoung.pdf">Academic CV</a>
         </div>
 
@@ -232,13 +232,13 @@
         <p style="margin:0;color:var(--muted)">On-device AI · Federated Learning · Domain Adaptation · Distributed Systems</p>
         <div style="margin-top:12px">
           <strong>Contact</strong>
-          <p style="margin:6px 0 0;color:var(--muted)"><a class="inline-link" href="mailto:you@example.com">you@example.com</a></p>
+          <p style="margin:6px 0 0;color:var(--muted)"><a class="inline-link" href="mailto:jsong@pusan.ac.kr">jsong@pusan.ac.kr</a></p>
         </div>
       </aside>
     </main>
 
     <!-- Projects -->
-    <section class="block fade-up delay-2" id="projects">
+    <!-- <section class="block fade-up delay-2" id="projects">
       <h3 style="margin:0 0 6px 0">Projects</h3>
       <div class="cards">
         <article class="project">
@@ -269,7 +269,63 @@
           </div>
         </article>
       </div>
+    </section> -->
+
+    <section class="block fade-up delay-2" id="research">
+      <h3 style="margin:0 0 6px 0">Projects</h3>
+      <div class="cards">
+        <article class="research">
+          <h4>Heterogeneous Federated Learning</h4>
+          <p style="margin:6px 0 10px 0;color:var(--muted)">When heterogeneous devices collaborate in a federated learning setting, challenges arise in terms of data distribution, model convergence, and communication efficiency. We address these challenges by proposing novel algorithms and frameworks that enhance the performance and robustness of federated learning systems in heterogeneous environments.</p>
+          <div class="tags">
+            <span class="tag">Data and system heterogeneity</span>
+            <span class="tag">Communication-efficient federated learning</span>
+          </div>
+        </article>
+
+        <article class="research">
+          <h4>Personalized Federated Learning for Multi-domain Dataset</h4>
+          <p style="margin:6px 0 10px 0;color:var(--muted)">We propose a personalized federated learning framework that adapts to the unique characteristics of each domain while leveraging shared knowledge across domains. This approach enhances model performance and robustness in multi-domain scenarios and further provides personalized model suitable for each individual client.</p>
+          <div class="tags">
+            <span class="tag">Domain adaptation</span>
+            <span class="tag">Domain shift</span>
+            <span class="tag">Model bias</span>
+          </div>
+        </article>
+
+        <article class="research">
+          <h4>Convergence of Federated Learning system and Communication system</h4>
+          <p style="margin:6px 0 10px 0;color:var(--muted)">To collaborate without exchanging local data, high frequency communication is essential. We investigate the interplay between federated learning systems and communication systems, focusing on how to optimize both for improved performance. Our approach includes developing joint strategies that consider both the dynamics of federated learning and characteristics of communication networks to obtain well-trained model efficiently.</p>
+          <div class="tags">
+            <span class="tag">Embedded</span>
+            <span class="tag">Scheduling</span>
+          </div>
+        </article>
+      </div>
     </section>
+
+    <!-- Publications -->
+    <section class="block fade-up delay-3" id="publications">
+      <h3 style="margin:0 0 6px 0">Selected publications</h3>
+      <div style="margin-top:12px;display:grid;gap:10px">
+        <div class="pub">
+          <div>
+            <div style="font-weight:600">Asynchronous Federated Learning over TDMA channels</div>
+            <small>Conference • 2025 — Jaeyoung Song et al.</small>
+          </div>
+          <div><a class="inline-link" href="#">PDF</a></div>
+        </div>
+
+        <div class="pub">
+          <div>
+            <div style="font-weight:600">Routing for LEO satellite networks</div>
+            <small>Journal • 2024 — Jaeyoung Song et al.</small>
+          </div>
+          <div><a class="inline-link" href="#">PDF</a></div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- Members -->
     <section class="block fade-up delay-2" id="members">
@@ -305,27 +361,46 @@
       </div>
     </section>
 
-    <!-- Publications -->
-    <section class="block fade-up delay-3" id="publications">
-      <h3 style="margin:0 0 6px 0">Selected publications</h3>
-      <div style="margin-top:12px;display:grid;gap:10px">
-        <div class="pub">
-          <div>
-            <div style="font-weight:600">Asynchronous Federated Learning over TDMA channels</div>
-            <small>Conference • 2025 — Jaeyoung Song et al.</small>
-          </div>
-          <div><a class="inline-link" href="#">PDF</a></div>
+    <!-- Lab Members Section -->
+    <section id="members" class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Lab Members</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        
+        <!-- Member Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition">
+            <img src="member1.jpg" alt="Member 1" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+            <h3 class="text-xl font-semibold">Alice Kim</h3>
+            <p class="text-gray-500">PhD Student</p>
+            <p class="mt-3 text-gray-600 text-sm">
+            Researching federated learning and distributed optimization.
+            </p>
         </div>
 
-        <div class="pub">
-          <div>
-            <div style="font-weight:600">Routing for LEO satellite networks</div>
-            <small>Journal • 2024 — Jaeyoung Song et al.</small>
-          </div>
-          <div><a class="inline-link" href="#">PDF</a></div>
+        <!-- Member Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition">
+            <img src="member2.jpg" alt="Member 2" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+            <h3 class="text-xl font-semibold">Brian Lee</h3>
+            <p class="text-gray-500">Master's Student</p>
+            <p class="mt-3 text-gray-600 text-sm">
+            Focuses on reinforcement learning applications in wireless networks.
+            </p>
+        </div>
+
+        <!-- Member Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition">
+            <img src="member3.jpg" alt="Member 3" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover">
+            <h3 class="text-xl font-semibold">Soojin Park</h3>
+            <p class="text-gray-500">Research Assistant</p>
+            <p class="mt-3 text-gray-600 text-sm">
+            Works on data preprocessing and system implementation for experiments.
+            </p>
+        </div>
+
         </div>
       </div>
     </section>
+
 
     <!-- Contact -->
     <section class="block fade-up delay-1" id="contact">
@@ -356,9 +431,9 @@
         <aside style="padding:14px;border-radius:12px;background:var(--glass);border:1px solid var(--glass-2)">
           <strong>Other ways</strong>
           <ul style="margin-top:8px;color:var(--muted);padding-left:18px">
-            <li>Office: Department of Engineering, Your University</li>
-            <li>Email: <a class="inline-link" href="mailto:you@example.com">you@example.com</a></li>
-            <li>GitHub: <a class="inline-link" href="https://github.com/your-github" target="_blank" rel="noreferrer">your-github</a></li>
+            <li>Office: Room #9501, The 9-th Engineering Building, Pusan National University</li>
+            <li>Email: <a class="inline-link" href="mailto:jsong@pusan.ac.kr">jsong@pusan.ac.kr</a></li>
+            <li>GitHub: <a class="inline-link" href="https://github.com/jaeyoung-song" target="_blank" rel="noreferrer">jaeyoung-song</a></li>
           </ul>
         </aside>
       </div>
