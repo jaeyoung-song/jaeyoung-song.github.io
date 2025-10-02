@@ -91,7 +91,7 @@
     .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06)}
 
     /* main {display:grid;grid-template-columns: 1fr 360px; gap:28px; align-items:start} */
-    main {display:grid;grid-template-columns: 1fr; gap:28px; align-items:start; padding-bottom:20px}  
+    main {display:grid;grid-template-columns: 1fr; gap:28px; align-items:start; padding-bottom:20px} 
     /* HERO */
     .hero{
       padding:28px;border-radius:var(--radius);
@@ -464,48 +464,76 @@
     </footer>
   </div>
 
-  <script>
-    // Initialize year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Back to Top Button -->
+    <button id="backToTopBtn" 
+            class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+    ↑
+    </button>
 
-    // Theme handling
-    const themeToggle = document.getElementById('themeToggle');
-    const saved = localStorage.getItem('site-theme');
-    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    <script>
+        // Get the button
+        const backToTopBtn = document.getElementById("backToTopBtn");
 
-    function applyTheme(t){
-      if(t === 'light') document.documentElement.classList.add('light');
-      else document.documentElement.classList.remove('light');
-      localStorage.setItem('site-theme', t);
-    }
+        // Show button when user scrolls down 200px
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            backToTopBtn.classList.remove("hidden");
+            } else {
+            backToTopBtn.classList.add("hidden");
+            }
+        });
 
-    // default: saved > prefer > dark
-    if(saved) applyTheme(saved);
-    else applyTheme(prefersLight ? 'light' : 'dark');
+        // Scroll to top smoothly when clicked
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+            });
+        });</script>
+    </script>
 
-    themeToggle.addEventListener('click', () => {
-      const now = document.documentElement.classList.contains('light') ? 'light' : 'dark';
-      applyTheme(now === 'light' ? 'dark' : 'light');
-    });
+    <script>
+        // Initialize year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-    // simple contact handler that opens mailto: with prefilled body
-    function handleContact(e){
-      e.preventDefault();
-      const f = e.target;
-      const name = encodeURIComponent(f.name.value.trim());
-      const email = encodeURIComponent(f.email.value.trim());
-      const msg = encodeURIComponent(f.message.value.trim());
-      const subject = encodeURIComponent('Contact from site — ' + name);
-      const body = encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`);
-      // opens default mail client
-      window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
-    }
+        // Theme handling
+        const themeToggle = document.getElementById('themeToggle');
+        const saved = localStorage.getItem('site-theme');
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
-    // Download CV button
-    document.getElementById('downloadCv').addEventListener('click', () => {
-      // replace with /CV.pdf if hosted
-      window.location.href = '/src/CV_Jaeyoung.pdf';
-    });
-  </script>
+        function applyTheme(t){
+        if(t === 'light') document.documentElement.classList.add('light');
+        else document.documentElement.classList.remove('light');
+        localStorage.setItem('site-theme', t);
+        }
+
+        // default: saved > prefer > dark
+        if(saved) applyTheme(saved);
+        else applyTheme(prefersLight ? 'light' : 'dark');
+
+        themeToggle.addEventListener('click', () => {
+        const now = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+        applyTheme(now === 'light' ? 'dark' : 'light');
+        });
+
+        // simple contact handler that opens mailto: with prefilled body
+        function handleContact(e){
+        e.preventDefault();
+        const f = e.target;
+        const name = encodeURIComponent(f.name.value.trim());
+        const email = encodeURIComponent(f.email.value.trim());
+        const msg = encodeURIComponent(f.message.value.trim());
+        const subject = encodeURIComponent('Contact from site — ' + name);
+        const body = encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`);
+        // opens default mail client
+        window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+        }
+
+        // Download CV button
+        document.getElementById('downloadCv').addEventListener('click', () => {
+        // replace with /CV.pdf if hosted
+        window.location.href = '/src/CV_Jaeyoung.pdf';
+        });
+    </script>
 </body>
 </html>
