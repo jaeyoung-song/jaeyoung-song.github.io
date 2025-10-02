@@ -465,45 +465,6 @@
     </footer>
   </div>
 
-  <!-- Back to Top Button -->
-    <button id="backToTopBtn" 
-            class="hidden fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center 
-                bg-gray-800 text-white rounded-full shadow-lg opacity-0 
-                transition-opacity duration-300 hover:bg-gray-700">
-    <!-- Up Arrow Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" 
-        class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-            d="M5 15l7-7 7 7" />
-    </svg>
-    </button>
-
-    <script>
-    const backToTopBtn = document.getElementById("backToTopBtn");
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 200) {
-        backToTopBtn.classList.remove("hidden");
-        backToTopBtn.classList.add("opacity-100");
-        backToTopBtn.classList.remove("opacity-0");
-        } else {
-        backToTopBtn.classList.add("opacity-0");
-        backToTopBtn.classList.remove("opacity-100");
-        setTimeout(() => {
-            if (window.scrollY <= 200) {
-            backToTopBtn.classList.add("hidden");
-            }
-        }, 300); // match transition duration
-        }
-    });
-
-    backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-    </script>
-
-
-
     <script>
         // Initialize year
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -548,4 +509,33 @@
         });
     </script>
 </body>
+
+  <!-- Back to Top Button -->
+<button id="backToTopBtn" 
+        class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+  ↑
+</button>
+
+<script>
+  // Get the button
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  // Show button when user scrolls down 200px
+  window.addEventListener("scroll", () => {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.classList.remove("hidden");
+    } else {
+      backToTopBtn.classList.add("hidden");
+    }
+  });
+
+  // Scroll to top smoothly when clicked
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
 </html>
