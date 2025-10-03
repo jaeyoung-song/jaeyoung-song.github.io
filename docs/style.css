@@ -192,10 +192,11 @@ a.inline-link{color:inherit;text-decoration:underline}
   top: 100%;
   left: 0;
   background: var(--bg);
-  border: 1px solid #eee;
+  border: 0px solid #eee;
   border-radius: 6px;
   min-width: 180px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  z-index: 1000; /* forces dropdown above everything */
 }
 
 .dropdown-content a {
@@ -221,47 +222,9 @@ nav {
   z-index: 10;        /* keep nav above main */
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--bg);
-  border: 1px solid #eee;
-  border-radius: 6px;
-  min-width: 180px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  z-index: 1000; /* forces dropdown above everything */
-}
+
 
 /* Reverse numbered list for publications */
-.reverse-numbered-list {
-  list-style: none;
-  padding-left: 0px;
-  counter-reset: pub-counter var(--total-pubs); /* set total count */
-}
-
-.reverse-numbered-list li {
-  counter-increment: pub-counter -1; /* decrement counter */
-  margin: 0.8em 0;
-  padding-left: 3em;
-  position: relative;
-}
-
-.reverse-numbered-list li::before {
-  content: counter(pub-counter);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-  background: var(--accent-light);
-  color: var(--accent);
-  font-weight: bold;
-  text-align: center;
-  line-height: 2em;
-}
 
 .reverse-boxed-list {
   list-style: none;
@@ -279,7 +242,7 @@ nav {
 .reverse-boxed-list li::before {
   content: counter(pub-counter);
   position: absolute;
-  left: 0;
+  left: -0.6em;
   top: 0;
   width: 2em;
   height: 2em;
@@ -290,8 +253,51 @@ nav {
   text-align: center;
   line-height: 2em;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  prefix: "J";
+  content: "[J" counter(pub-counter)"]";
+  display: inline-block;
+  font-size: 1em;
+  font-family: "Courier New", Courier, monospace;
+  padding-top: 2px;                 /* adjust vertical alignment */
+  box-sizing: border-box;
+  border: 1px solid var(--accent);
 }
+
+.reverse-boxed-conf-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: pub-counter var(--total-pubs); /* starting number = total count */
+}
+
+.reverse-boxed-conf-list li {
+  counter-increment: pub-counter -1; /* decrement on each item */
+  margin: 0.8em 0;
+  padding-left: 3em;
+  position: relative;
+}
+
+.reverse-boxed-conf-list li::before {
+  position: absolute;
+  left: -0.6em;
+  top: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 6px;              /* square with rounded corners */
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: bold;
+  text-align: center;
+  line-height: 2em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  content: "[C" counter(pub-counter)"]";
+  display: inline-block;
+  font-size: 1em;
+  font-family: "Courier New", Courier, monospace;
+  padding-top: 2px;                 /* adjust vertical alignment */
+  box-sizing: border-box;
+  border: 1px solid var(--accent);
+}
+
+
 
 
 
