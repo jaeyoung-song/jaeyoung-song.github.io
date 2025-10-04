@@ -251,7 +251,7 @@ nav {
   color: var(--accent);
   font-weight: bold;
   text-align: center;
-  line-height: 2em;
+  line-height: 1.2em;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   content: "[J" counter(pub-counter)"]";
   display: inline-block;
@@ -286,7 +286,7 @@ nav {
   color: var(--accent);
   font-weight: bold;
   text-align: center;
-  line-height: 2em;
+  line-height: 1.2em;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   content: "[C" counter(pub-counter)"]";
   display: inline-block;
@@ -297,6 +297,75 @@ nav {
   border: 1px solid var(--accent);
 }
 
+.reverse-boxed-book-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: pub-counter var(--total-pubs); /* starting number = total count */
+}
+
+.reverse-boxed-book-list li {
+  counter-increment: pub-counter -1; /* decrement on each item */
+  margin: 0.8em 0;
+  padding-left: 3em;
+  position: relative;
+}
+
+.reverse-boxed-book-list li::before {
+  position: absolute;
+  left: -0.6em;
+  top: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 6px;              /* square with rounded corners */
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  content: "[B" counter(pub-counter)"]";
+  display: inline-block;
+  font-size: 1em;
+  font-family: "Courier New", Courier, monospace;
+  padding-top: 2px;                 /* adjust vertical alignment */
+  box-sizing: border-box;
+  border: 1px solid var(--accent);
+}
+
+.reverse-boxed-doc-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: pub-counter var(--total-pubs); /* starting number = total count */
+}
+
+.reverse-boxed-doc-list li {
+  counter-increment: pub-counter -1; /* decrement on each item */
+  margin: 0.8em 0;
+  padding-left: 3em;
+  position: relative;
+}
+
+.reverse-boxed-doc-list li::before {
+  position: absolute;
+  left: -0.6em;
+  top: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 6px;              /* square with rounded corners */
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  content: "[D" counter(pub-counter)"]";
+  display: inline-block;
+  font-size: 1em;
+  font-family: "Courier New", Courier, monospace;
+  padding-top: 2px;                 /* adjust vertical alignment */
+  box-sizing: border-box;
+  border: 1px solid var(--accent);
+}
 
 
 
