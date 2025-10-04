@@ -82,8 +82,8 @@ nav a:hover{color:inherit;background:var(--glass)}
 
 /* main {display:grid;grid-template-columns: 1fr 360px; gap:28px; align-items:start} */
 main {display:grid;grid-template-columns: 1fr; gap:28px; align-items:start; padding-bottom:20px} 
-/* HERO */
-.hero{
+/* Title */
+.title{
     padding:28px;border-radius:var(--radius);
     background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
     backdrop-filter: blur(6px);
@@ -91,7 +91,7 @@ main {display:grid;grid-template-columns: 1fr; gap:28px; align-items:start; padd
     position:relative;
     overflow:hidden;
 }
-.hero::after{
+.title::after{
     content:"";position:absolute;right:-120px;top:-60px;width:360px;height:360px;border-radius:50%;
     background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.18), transparent 20%);
     filter: blur(40px);opacity:.9;pointer-events:none;
@@ -154,7 +154,7 @@ section.block{margin-top:22px}
 @media (max-width:980px){
     main{grid-template-columns:1fr; padding-bottom:40px}
     aside.card{order:2}
-    .hero::after{display:none}
+    .title::after{display:none}
 }
 
 /* subtle entrance animation */
