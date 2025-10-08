@@ -256,6 +256,19 @@
         window.location.href = '/src/CV_Jaeyoung.pdf';
         });
     </script>
+
+    <script>
+      // Toggle dropdown on mobile tap
+      document.querySelectorAll('.dropbtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const dropdown = btn.nextElementSibling;
+          dropdown.style.display =
+            dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    </script>
+
 </body>
 
 </html>

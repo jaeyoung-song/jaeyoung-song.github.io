@@ -78,6 +78,35 @@
           <li> Jaeyoung Song, Young-bin Kim, and Wan Choi, “Considerations on 11ax Auto-detection Methods,” IEEE 802.11 Interim session, IEEE 802.11- 14/0081r1, Atlanta, Jan. 2015</li>
           <li> Young-bin Kim, Jaeyoung Song, and Wan Choi, “Considerations on 11ax OFDMA Frequency Granularity,” IEEE 802.11 Interim session, IEEE 802.11-14/0082r1, Atlanta, Jan. 2015</li>
       </section>
+
+      <!-- Back to Top Button -->
+    <div style="height: 40px;"></div> <!-- spacer to avoid overlap with footer -->
+    <button id="backToTopBtn" 
+            class="hidden fixed bottom-6 right bg-blue-600 text-white px-4 py-2 rounded-md shadow-lg hover:bg-blue-700 transition"
+            style="font-size:16px; font-weight:600;">
+        ↑ Top
+    </button>
+        <script>
+        // Get the button
+        const backToTopBtn = document.getElementById("backToTopBtn");
+
+        // Show button when user scrolls down 200px
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopBtn.classList.remove("hidden");
+            } else {
+                backToTopBtn.classList.add("hidden");
+            }
+        });
+
+        // Scroll to top smoothly when clicked
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+        </script>  
     </main>
 
     <footer>
@@ -86,7 +115,59 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+      // Toggle dropdown on mobile tap
+      document.querySelectorAll('.dropbtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const dropdown = btn.nextElementSibling;
+          dropdown.style.display =
+            dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    </script>
+  
+    <script>
+        // Initialize year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme handling
+        const themeToggle = document.getElementById('themeToggle');
+        const saved = localStorage.getItem('site-theme');
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
+        function applyTheme(t){
+        if(t === 'light') document.documentElement.classList.add('light');
+        else document.documentElement.classList.remove('light');
+        localStorage.setItem('site-theme', t);
+        }
+
+        // default: saved > prefer > dark
+        if(saved) applyTheme(saved);
+        else applyTheme(prefersLight ? 'light' : 'dark');
+
+        themeToggle.addEventListener('click', () => {
+        const now = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+        applyTheme(now === 'light' ? 'dark' : 'light');
+        });
+
+        // simple contact handler that opens mailto: with prefilled body
+        function handleContact(e){
+        e.preventDefault();
+        const f = e.target;
+        const name = encodeURIComponent(f.name.value.trim());
+        const email = encodeURIComponent(f.email.value.trim());
+        const msg = encodeURIComponent(f.message.value.trim());
+        const subject = encodeURIComponent('Contact from site — ' + name);
+        const body = encodeURIComponent(`Name: ${f.name.value}\nEmail: ${f.email.value}\n\n${f.message.value}`);
+        // opens default mail client
+        window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+        }
+
+        // Download CV button
+        document.getElementById('downloadCv').addEventListener('click', () => {
+        // replace with /CV.pdf if hosted
+        window.location.href = '/src/CV_Jaeyoung.pdf';
+        });
+    </script>
 </body>
 </html>
