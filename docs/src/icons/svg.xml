@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#06b6d4" />
     </linearGradient>
   </defs>
-  <rect x="0" y="0" width="56" height="56" rx="12" fill="url(#grad)" /> -->
+  <rect x="0" y="0" width="320" height="320" rx="12" fill="url(#grad)" />
   <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
-        font-family="Inter, sans-serif" font-weight="800" font-size="20"
+        font-family="Inter, sans-serif" font-weight="800" font-size="18"
         fill="white">IADL</text>
 </svg>
