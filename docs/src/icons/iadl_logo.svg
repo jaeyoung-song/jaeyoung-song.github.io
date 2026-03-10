@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="100" viewBox="0 0 960 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rectangle now fits the full width/height (or use a smaller width to add padding) -->
+  <rect x="0" y="0" width="960" height="100" rx="25" fill="url(#grad)" />
+  
+  <!-- Text is perfectly centered using 50% x/y and baseline/anchor settings -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Inter, sans-serif" font-weight="1000" font-size="48"
+        fill="white">Intelligent Algorithm Design Laboratory</text>
+</svg>
